@@ -106,8 +106,8 @@ class CircularArc(Edge):
             maxy = None
             for i in range(theta_start, theta_end, 1):
                 # Find the coordinates of the point at this angle:
-                px = radius * math.cos(math.radians(i))
-                py = radius * math.sin(math.radians(i))
+                px = self.X + radius * math.cos(math.radians(i))
+                py = self.Y + radius * math.sin(math.radians(i))
                 
                 # Compare:
                 if (minx is None):
