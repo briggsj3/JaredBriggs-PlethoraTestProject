@@ -7,6 +7,7 @@ from Vertex import Vertex
 from Line import Line
 from CircularArc import CircularArc
 import Constants
+import locale
 
 class Profile(object):
     def __init__(self, json_dict):
@@ -65,6 +66,9 @@ class Profile(object):
             return
         
         
+        print 'Material Size Required = ' + str(xmax_G - xmin_G) + ' x ' + str(ymax_G - ymin_G) + ' inches.'
+        
+        
         # Calculate the material cost:
         area = (xmax_G - xmin_G + Constants.Padding) * (ymax_G - ymin_G + Constants.Padding)
         material_cost = Constants.MaterialCost_persqin * area
@@ -72,9 +76,10 @@ class Profile(object):
         # Total cost:
         total_cost = machine_cost + material_cost
         
-        print 'Total Profile Cost = $' + str(total_cost)
+        # Set the locale for the currency formatting:
+        locale.setlocale(locale.LC_ALL, '')
         
+        print 'Total Profile Cost = ' + locale.currency(total_cost, grouping=True)
         
     
-  #  def calcPrice(self):
         
