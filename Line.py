@@ -81,4 +81,4 @@ class Line(Edge):
         v2 = vertex_dict[self.V2]
         length = vertex_dict[self.V1].calcDistance(v2.X, v2.Y)
         
-        return length * Constants.MaxSpeed * Constants.MachineCost_persecond
+        return length * Constants.MachineCost_persecond / Constants.MaxSpeed 
