@@ -152,7 +152,7 @@ class CircularArc(Edge):
         v2 = vertex_dict[self.V2]
         length = self.calcLength(v1, v2)
         
-        return length * Constants.MaxSpeed * math.exp(-1.0 / float(self.getRadius(v1))) * Constants.MachineCost_persecond
+        return length * Constants.MachineCost_persecond / (Constants.MaxSpeed * math.exp(-1.0 / float(self.getRadius(v1))))
         
     
     def getRadius(self, v):
