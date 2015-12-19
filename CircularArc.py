@@ -162,31 +162,19 @@ class CircularArc(Edge):
     
     def getVertexAngles(self, v1, v2):
         # Get the angle of the arc:
-       # theta1 = math.atan2(v1.Y - self.Y, v1.X - self.X)
-       # theta2 = math.atan2(v2.Y - self.Y, v2.X - self.X)
-        if (v1.X == self.X):
-            theta1 = math.pi / 2.0
-        else:
-            theta1 = math.atan((v1.Y - self.Y)/(v1.X - self.X))
-        if (v2.X == self.X):
-            theta2 = math.pi / 2.0
-        else:
-            theta2 = math.atan((v2.Y - self.Y)/(v2.X - self.X))
+        theta1 = math.atan2(v1.Y - self.Y, v1.X - self.X)
+        theta2 = math.atan2(v2.Y - self.Y, v2.X - self.X)
             
         if (self.ClockwiseFrom == self.V1 and theta1 > theta2):
-            theta = theta1 - theta2
             theta_start = theta2
             theta_end = theta1
         elif (self.ClockwiseFrom == self.V1):
-            theta = math.pi - (theta2 - theta1)
             theta_start = theta1
             theta_end = theta2
         elif (theta2 > theta1):
-            theta = theta2 - theta1
             theta_start = theta1
             theta_end = theta2
         else:
-            theta = math.pi - (theta1 - theta2)
             theta_start = theta2
             theta_end = theta1
         
