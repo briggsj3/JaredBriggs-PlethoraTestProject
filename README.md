@@ -22,13 +22,15 @@ Alternatively, in your Python terminal, you can navigate to the PlethoraTestProj
 
 ## To Build a Profile object from the PlethoraTestProject using a JSON-formatted text:
 Assuming you've read a JSON-formatted file into an object called `jsontxt`,
-```import json
+```
+import json
 jsondict = json.loads(jsontxt)
 from Profile import Profile
 profile = Profile(jsondict)
 
 print 'The dimensions of the profile's material = ' + str(profile.DimX) + ' x ' + str(profile.DimY) + ' inches.'
-print 'The cost of the profile = $' + profile.TotalCost + '.'```
+print 'The cost of the profile = $' + profile.TotalCost + '.'
+```
 
 
 
