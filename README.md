@@ -22,7 +22,7 @@ Double-click on the `Driver.py` file.
 
 Alternatively, in your Python terminal, you can navigate to the PlethoraTestProject directory, and run `import Driver`.
 
-## To Build a Profile object from the PlethoraTestProject using a JSON-formatted text:
+## To Build a Profile object using a JSON-formatted text:
 Assuming you've read a JSON-formatted file into an object called `jsontxt`,
 ```
 import json
