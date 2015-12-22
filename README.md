@@ -33,6 +33,7 @@ print 'The dimensions of the profile's material = ' + str(profile.DimX) + ' x ' 
 print 'The cost of the profile = $' + profile.TotalCost + '.'
 ```
 
+## Notes About the Class Structure:
 Creating an instance of the Profile class automatically creates all of the necessary Vertex and Edge objects from the data in the `jsondict` object supplied to the object's `__init__()` function.  
 
 The Edge class is inherited into the other edge-type classes, including Line and CircularArc classes.  Any other edge class definitions would also inherit from the Edge class.
