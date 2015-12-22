@@ -210,14 +210,14 @@ class CircularArc(Edge):
                 py = radius * math.sin(math.radians(i))
                 
                 # Calculate the distance between these points:
-                dist += math.sqrt((px - lastx)*(px - lastx) + (py - lasty)*(py - lasty))
+                dist += math.hypot(px - lastx, py - lasty)
                 
                 lastx = px
                 lasty = py
             
             px = radius * math.cos(theta_end)
             py = radius * math.sin(theta_end)
-            dist += math.sqrt((px - lastx)*(px - lastx) + (py - lasty)*(py - lasty))
+            dist += math.hypot(px - lastx, py - lasty)
             
             # Return the cumulative distance:
             return dist

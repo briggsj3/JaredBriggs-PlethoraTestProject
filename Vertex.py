@@ -18,6 +18,5 @@ class Vertex(object):
         self.X = ob_dict["Position"]["X"]
         self.Y = ob_dict["Position"]["Y"]
 
-    
     def calcDistance(self, x, y):
-        return(math.sqrt((self.X - x)*(self.X - x) + (self.Y - y)*(self.Y - y)))
+        return(math.hypot(self.X - x, self.Y - y))
