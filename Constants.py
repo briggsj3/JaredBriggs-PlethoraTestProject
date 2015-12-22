@@ -13,6 +13,3 @@ MaxSpeed = 0.5                  # in/second
 
 # Padding:
 Padding = 0.1                   # in
-
-
-

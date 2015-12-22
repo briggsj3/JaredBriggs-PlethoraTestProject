@@ -7,7 +7,7 @@ from Vertex import Vertex
 from Line import Line
 from CircularArc import CircularArc
 import Constants
-import locale
+
 
 class Profile(object):
     def __init__(self, json_dict):

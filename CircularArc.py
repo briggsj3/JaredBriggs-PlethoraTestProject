@@ -7,6 +7,7 @@ from Edge import Edge
 import Constants
 import math
 
+
 class CircularArc(Edge):
     def __init__(self, id, json_dict):
         Edge.__init__(self, id)

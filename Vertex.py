@@ -5,6 +5,7 @@
 
 import math
 
+
 class Vertex(object):
     def __init__(self, id, json_dict):
         # Get the information about this vertex from the json_dict:
