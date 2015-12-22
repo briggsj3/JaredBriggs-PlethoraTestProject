@@ -47,7 +47,7 @@ class Profile(object):
         for edge in self.EdgeDict.values():
             # Bounds:
             [xmin, xmax, ymin, ymax] = edge.getBounds(self.VertexDict)
-            if (xmin_G == None):
+            if (xmin_G is None):
                 xmin_G = xmin
                 xmax_G = xmax
                 ymin_G = ymin
@@ -61,25 +61,25 @@ class Profile(object):
             # Machine Cost:
             machine_cost += edge.calcMachinePrice(self.VertexDict)
         
-        if (xmin_G == None):
+        if (xmin_G is None):
             print ' ERROR:  Profile::__init__() -> No bounds found.'
-            return
+            return        
         
-        
-        print 'Material Size Required = ' + str(xmax_G - xmin_G) + ' x ' + str(ymax_G - ymin_G) + ' inches.'
-        
-        
+        self.DimX = xmax_G - xmin_G
+        self.DimY = ymax_G - ymin_G
+                
         # Calculate the material cost:
         area = (xmax_G - xmin_G + Constants.Padding) * (ymax_G - ymin_G + Constants.Padding)
         material_cost = Constants.MaterialCost_persqin * area
         
         # Total cost:
-        total_cost = machine_cost + material_cost
-        
-        # Set the locale for the currency formatting:
-        locale.setlocale(locale.LC_ALL, '')
-        
-        print 'Total Profile Cost = ' + locale.currency(total_cost, grouping=True)
+        self.TotalCost = "{0:.2f}".format(machine_cost + material_cost)
         
     
+    def getMaterialDims(self):
+        return [self.DimX, self.DimY]
+    
+    
+    def getTotalCost(self):
+        return(self.TotalCost)
         
