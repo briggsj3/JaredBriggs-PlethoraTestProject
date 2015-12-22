@@ -1,5 +1,5 @@
 # PlethoraTestProject
-A sample project made for Plethora as part of my interviewing for employment process.
+A sample project made for Plethora as part of my interviewing for employment process (using Python 2.7).
 
 
 # Assumptions:
@@ -12,6 +12,8 @@ A sample project made for Plethora as part of my interviewing for employment pro
 ## Why I Chose Python for this Implementation:
 1. Python allows rapid prototyping of a system such as this, readily supplying much of the necessary functionality (JSON parsing, etc.)
 2. I wanted to be sure that Plethora employees could run my code without needing other external libraries (in C++, I use the Boost libraries for cross-platform networking, JSON parsing, threading, and other fun functionality)
+
+NOTE:  This project was built and tested using Python 2.7.
 
 
 # Running the PlethoraTestProject:
