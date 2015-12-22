@@ -6,7 +6,6 @@
 from Profile import Profile
 import os
 import json
-import time
 
 
 # Call this function to parse a JSON file and run the Profiler.
@@ -74,4 +73,6 @@ print 'Total Profile Cost = $' + str(CalculateProfileCost(testdir + \
 print 'Total Profile Cost = $' + str(CalculateProfileCost(testdir + \
     "/ExampleFiles/CutCircularArc.json")) + '\n'
 
-time.sleep(50)
+# This is a hack to get the dialog to stay open:
+print 'Press Enter to Close...'
+raw_input()
