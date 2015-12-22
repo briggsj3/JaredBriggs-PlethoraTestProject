@@ -65,11 +65,11 @@ class Profile(object):
             print ' ERROR:  Profile::__init__() -> No bounds found.'
             return        
         
-        self.DimX = xmax_G - xmin_G
-        self.DimY = ymax_G - ymin_G
+        self.DimX = xmax_G - xmin_G + Constants.Padding
+        self.DimY = ymax_G - ymin_G + Constants.Padding
                 
         # Calculate the material cost:
-        area = (xmax_G - xmin_G + Constants.Padding) * (ymax_G - ymin_G + Constants.Padding)
+        area = self.DimX * self.DimY
         material_cost = Constants.MaterialCost_persqin * area
         
         # Total cost:
